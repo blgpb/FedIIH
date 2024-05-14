@@ -166,75 +166,7 @@ def set_config(args):
             args.base_lr = 0.01  
         elif args.mode == 'overlapping':
             args.base_lr = 0.01  
-    elif args.dataset == 'Actor':
-        args.n_feat = 932
-        args.n_clss = 5
-        args.n_clients = 10 if args.n_clients == None else args.n_clients
-        if args.mode == 'disjoint': 
-            args.base_lr = 0.015  
-            args.dropout = 0.35  
-            args.weight_decay = 1e-6  
-            args.n_latentdims = 128  
-            args.n_layers = 1  
-            args.n_routit = 6  
-        elif args.mode == 'overlapping':
-            args.base_lr = 0.015  
-            args.dropout = 0.35  
-            args.weight_decay = 1e-6  
-            args.n_latentdims = 128  
-            args.n_layers = 1  
-            args.n_routit = 6  
-    elif args.dataset == 'squirrel':
-        args.n_feat = 2089
-        args.n_clss = 5
-        args.n_clients = 10 if args.n_clients == None else args.n_clients
-        if args.mode == 'disjoint': 
-            args.base_lr = 0.015  
-            args.dropout = 0.35 
-            args.weight_decay = 1e-6  
-            args.n_latentdims = 128  
-            args.n_layers = 1  
-            args.n_routit = 6 
-        elif args.mode == 'overlapping':
-            args.base_lr = 0.015  
-            args.dropout = 0.35  
-            args.weight_decay = 1e-6  
-            args.n_latentdims = 128 
-            args.n_layers = 1  
-            args.n_routit = 6  
-    elif args.dataset == 'chameleon':
-        args.n_feat = 2325
-        args.n_clss = 5
-        args.n_clients = 10 if args.n_clients == None else args.n_clients
-        if args.mode == 'disjoint': 
-            args.base_lr = 0.015  
-            args.dropout = 0.35  
-            args.weight_decay = 1e-6 
-            args.n_latentdims = 128  
-            args.n_layers = 1  
-            args.n_routit = 6  
-        elif args.mode == 'overlapping':
-            args.base_lr = 0.015  
-            args.dropout = 0.35  
-            args.weight_decay = 1e-6  
-            args.n_latentdims = 128  
-            args.n_layers = 1  
-            args.n_routit = 6  
-    elif args.dataset == 'texas':
-        args.n_feat = 1703
-        args.n_clss = 5
-        args.n_clients = 10 if args.n_clients == None else args.n_clients
-        args.base_lr = 0.01 if args.lr == None else args.lr
-    elif args.dataset == 'cornell':
-        args.n_feat = 1703
-        args.n_clss = 5
-        args.n_clients = 10 if args.n_clients == None else args.n_clients
-        args.base_lr = 0.01 if args.lr == None else args.lr
-    elif args.dataset == 'wisconsin':
-        args.n_feat = 1703
-        args.n_clss = 5
-        args.n_clients = 10 if args.n_clients == None else args.n_clients
-        args.base_lr = 0.01 if args.lr == None else args.lr
+
 
 
     now = datetime.now().strftime("%Y%m%d_%H%M%S")

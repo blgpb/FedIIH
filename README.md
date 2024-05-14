@@ -2,6 +2,8 @@
 
 Official Code Repository for our paper - Modeling Intra-Inter Heterogeneity for Graph Federated Learning
 
+**This is the first version of our codes, which seems to be not perfect. If the paper is accepted, we will publish the more elegant and concise codes on GitHub. We also promise to implement our method on the commercial federated learning frameworks, such as FATE, PaddleFL, and FederatedScope.**
+
 ## Requirement
 - Python 3.9.16
 - PyTorch 2.0.1
@@ -15,17 +17,19 @@ $ cd FedIIH_2/data/generators
 $ python disjoint.py
 $ python overlapping.py
 ```
-or download from the Google Drive and then unzip it
-https://drive.google.com/file/d/1RHziMtUg4fEXjdAK5Gqd9BrWwxos0l2e/view?usp=sharing
+or download from the Google Drive (https://drive.google.com/file/d/1RHziMtUg4fEXjdAK5Gqd9BrWwxos0l2e/view?usp=sharing) and then unzip it
 
-## Run
-Following command lines run the experiments.
+## Parameter description
+
 
 - `gpus`: specify gpus to use
 - `num workers`: specify the number of workers on gpus (e.g. if your experiment uses 10 clients for every round then use less than or equal to 10 workers). The actual number of workers will be `num_workers` + 1 (one additional worker for a server).
+- `FedIIH_2` means that the number of disentangled latent factors is set to 2 (K=2). Similarly, `FedIIH_10` means that the number of disentangled latent factors is set to 10 (K=10).
+
+ 
 
 # Homophilic datasets
-
+Following command lines to run the experiments.
 ## Cora
 ### non-overlapping
 ```Python
@@ -170,8 +174,5 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Questions --mod
 ```
 
 
-
-# Note
-This is the first version of the codes. If the paper is accepted, we will post the more elegant and concise codes to GitHub. 
 
 
