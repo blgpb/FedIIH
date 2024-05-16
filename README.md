@@ -1,6 +1,6 @@
-# Modeling Intra-Inter Heterogeneity for Graph Federated Learning
+# Modeling Inter-Intra Heterogeneity for Graph Federated Learning
 
-Official Code Repository for our paper - Modeling Intra-Inter Heterogeneity for Graph Federated Learning
+Official Code Repository for our paper - Modeling Inter-Intra Heterogeneity for Graph Federated Learning
 
 **This is the first version of our codes, which seems to be not perfect. If the paper is accepted, we will publish the more elegant and concise codes on GitHub. We also promise to implement our method on the commercial federated learning frameworks, such as FATE, PaddleFL, and FederatedScope.**
 
