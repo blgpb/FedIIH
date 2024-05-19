@@ -8,7 +8,7 @@ Official Code Repository for our paper - Modeling Inter-Intra Heterogeneity for 
 - Python 3.8.8
 - PyTorch 1.12.0+cu113
 - PyTorch Geometric 2.3.0
-- METIS (for data generation), https://github.com/james77777778/metis_python
+- METIS (for data generation), https://anonymous.4open.science/r/metis_python
 
 ## Data generation
 Following command lines automatically to generate the dataset.
