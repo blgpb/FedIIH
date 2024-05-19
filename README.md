@@ -5,8 +5,8 @@ Official Code Repository for our paper - Modeling Inter-Intra Heterogeneity for 
 **This is the first version of our codes, which seems to be not perfect. If the paper is accepted, we will publish the more elegant and concise codes on GitHub. We also promise to implement our method on the commercial federated learning frameworks, such as FATE, PaddleFL, and FederatedScope.**
 
 ## Requirement
-- Python 3.9.16
-- PyTorch 2.0.1
+- Python 3.8.8
+- PyTorch 1.12.0+cu113
 - PyTorch Geometric 2.3.0
 - METIS (for data generation), https://github.com/james77777778/metis_python
 
