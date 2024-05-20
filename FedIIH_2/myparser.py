@@ -13,7 +13,7 @@ class Parser:
         self.parser.add_argument('--model', type=str, default=None)
         self.parser.add_argument('--dataset', type=str, default=None)
         self.parser.add_argument('--mode', type=str, default=None, choices=['disjoint', 'overlapping'])
-        self.parser.add_argument('--base-path', type=str, default='./')
+        self.parser.add_argument('--base-path', type=str, default='..')
 
         self.parser.add_argument('--n-workers', type=int, default=None)
         self.parser.add_argument('--n-clients', type=int, default=None)

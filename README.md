@@ -2,34 +2,39 @@
 
 Official Code Repository for our paper - Modeling Inter-Intra Heterogeneity for Graph Federated Learning
 
-**This is the first version of our codes, which seems to be not perfect. If the paper is accepted, we will publish the more elegant and concise codes on GitHub. We also promise to implement our method on the commercial federated learning frameworks, such as FATE, PaddleFL, and FederatedScope.**
+**This is the first version of our codes, which seems to be not perfect. If our paper is accepted, we will publish the more elegant and concise codes on GitHub. We also promise to implement our method on the commercial federated learning frameworks, such as FATE, PaddleFL, and FederatedScope.**
 
 ## Requirement
 - Python 3.8.8
 - PyTorch 1.12.0+cu113
 - PyTorch Geometric 2.3.0
-- METIS (for data generation), https://anonymous.4open.science/r/metis_python
+- METIS (only for subgraph generation) https://anonymous.4open.science/r/metis_python
 
-## Data generation
-Following command lines automatically to generate the dataset.
+## Subgraph generation
+Download from the Google Drive (https://drive.google.com/file/d/1PyqvR6yL43Om42fdsbKHj5WCgREvi3St/view?usp=sharing) and then unzip it.
+
+Place the `datasets` folder in the same path as `README.md`
+
+or
+
+follow command lines automatically to generate the subgraphs.
 ```sh
 $ cd FedIIH_2/data/generators
 $ python disjoint.py
 $ python overlapping.py
 ```
-or download from the Google Drive (https://drive.google.com/file/d/1RHziMtUg4fEXjdAK5Gqd9BrWwxos0l2e/view?usp=sharing) and then unzip it
 
 ## Parameter description
 
 
 - `gpus`: specify gpus to use
-- `num workers`: specify the number of workers on gpus (e.g. if your experiment uses 10 clients for every round then use less than or equal to 10 workers). The actual number of workers will be `num_workers` + 1 (one additional worker for a server).
+- `num workers`: specify the number of workers on gpus (_e.g._, if your experiment uses 10 clients for every round then use less than or equal to 10 workers). The actual number of workers will be `num_workers` + 1 (one additional worker for a server).
 - `FedIIH_2` means that the number of disentangled latent factors is set to 2 (K=2). Similarly, `FedIIH_10` means that the number of disentangled latent factors is set to 10 (K=10).
 
  
 
 # Homophilic datasets
-Following command lines to run the experiments.
+Follow command lines to run the experiments.
 ## Cora
 ### non-overlapping
 ```Python
@@ -41,6 +46,7 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Cora --mode dis
 $ cd FedIIH_2
 $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Cora --mode overlapping --frac 1.0 --n-rnds 100 --n-eps 1 --n-clients 10 --seed 42
 ```
+
 
 ## CiteSeer
 ### non-overlapping
@@ -67,7 +73,8 @@ $ cd FedIIH_2
 $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset PubMed --mode overlapping --frac 1.0 --n-rnds 100 --n-eps 1 --n-clients 10 --seed 42
 ```
 
-## Computers
+
+## Amazon-Computer
 ### non-overlapping
 ```Python
 $ cd FedIIH_6
@@ -80,7 +87,7 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Computers --mod
 ```
 
 
-## Photo
+## Amazon-Photo
 ### non-overlapping
 ```Python
 $ cd FedIIH_6
@@ -91,6 +98,7 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Photo --mode di
 $ cd FedIIH_10
 $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Photo --mode overlapping --frac 1.0 --n-rnds 200 --n-eps 2 --n-clients 10 --seed 42
 ```
+
 
 ## ogbn-arxiv
 ### non-overlapping
@@ -159,8 +167,6 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Tolokers --mode
 ```
 
 
-
-
 ## Questions
 ### non-overlapping
 ```Python
@@ -172,7 +178,3 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Questions --mod
 $ cd FedIIH_2
 $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Questions --mode overlapping --frac 1.0 --n-rnds 100 --n-eps 1 --n-clients 10 --seed 42
 ```
-
-
-
-

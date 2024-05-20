@@ -7,7 +7,6 @@ import torch.multiprocessing as mp
 
 from misc.utils import *
 from models.nets import *
-import yagmail
 
 class ParentProcess:
     def __init__(self, args, Server, Client):

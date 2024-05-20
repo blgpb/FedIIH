@@ -65,4 +65,4 @@ def split_subgraphs(n_clients, data, dataset):
         print(f'client_id: {client_id}, iid, n_train_node: {client_num_nodes}, n_train_edge: {client_num_edges}')
 
 for n_clients in clients:
-    generate_data(dataset='wisconsin', n_clients=n_clients)
+    generate_data(dataset='Cora', n_clients=n_clients)
