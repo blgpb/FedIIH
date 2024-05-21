@@ -50,7 +50,7 @@ def get_data(dataset, data_path):
         data.train_mask, data.val_mask, data.test_mask \
             = torch.zeros(data.num_nodes, dtype=torch.bool), torch.zeros(data.num_nodes, dtype=torch.bool), torch.zeros(data.num_nodes, dtype=torch.bool)
     elif dataset in ['Minesweeper', 'Tolokers', 'Questions']:
-        data = datasets.HeterophilousGraphDataset(data_path, transform=T.Compose([T.ToUndirected(), LargestConnectedComponents()]))[0]
+        data = datasets.HeterophilousGraphDataset(data_path, dataset, transform=T.Compose([T.ToUndirected(), LargestConnectedComponents()]))[0]
         data.y = data.y.float()  
         data.train_mask, data.val_mask, data.test_mask \
             = torch.zeros(data.num_nodes, dtype=torch.bool), torch.zeros(data.num_nodes, dtype=torch.bool), torch.zeros(data.num_nodes, dtype=torch.bool)
