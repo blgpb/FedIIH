@@ -194,18 +194,6 @@ class Client(ClientModule):
         self.transfer_to_server()
 
     def train(self):
-        st = time.time()
-        val_local_acc, val_local_lss = self.validate(mode='valid')
-        test_local_acc, test_local_lss = self.validate(mode='test')
-        self.logger.print(
-            f'rnd: {self.curr_rnd + 1}, ep: {0}, '
-            f'val_local_loss: {val_local_lss.item():.4f}, val_local_acc: {val_local_acc:.4f}, lr: {self.get_lr()} ({time.time() - st:.2f}s)'
-        )
-        self.log['ep_local_val_acc'].append(val_local_acc)
-        self.log['ep_local_val_lss'].append(val_local_lss)
-        self.log['ep_local_test_acc'].append(test_local_acc)
-        self.log['ep_local_test_lss'].append(test_local_lss)
-
         for ep in range(self.args.n_eps):
             self.model.train()
 
