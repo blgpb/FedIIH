@@ -69,11 +69,7 @@ class HVAE(nn.Module):
         kl_semantic = torch.mean(self.kld(z_mu_n, z_logvar_n, self.mu_Beta, Beta_logvar.cuda(self.gpu_id)))
 
         l_elbo = torch.mean(
-            log_pmu_Beta + extra_kl_Beta + logpx_z + kl_semantic)  
-
-        print('*********')
-        print(l_elbo.item())
-        print('*********')
+            log_pmu_Beta + extra_kl_Beta + logpx_z + kl_semantic)
 
         return l_elbo
 
@@ -213,8 +209,6 @@ class Client(ClientModule):
                                               edge_logits)
 
                 loss.backward()
-
-                print(loss.item())
 
                 self.optimizer_vae.step()
 

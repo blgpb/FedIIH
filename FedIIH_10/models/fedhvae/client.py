@@ -229,9 +229,6 @@ class HVAE(nn.Module):
         l_elbo = torch.mean(
             log_pmu_Alpha + extra_kl_Alpha + log_pmu_Beta + extra_kl_Beta + log_pmu_Alpha1 + extra_kl_Alpha1 + log_pmu_Beta1 + extra_kl_Beta1 + log_pmu_Alpha2 + extra_kl_Alpha2 + log_pmu_Beta2 + extra_kl_Beta2 + log_pmu_Alpha3 + extra_kl_Alpha3 + log_pmu_Beta3 + extra_kl_Beta3 + log_pmu_Alpha4 + extra_kl_Alpha4 + log_pmu_Beta4 + extra_kl_Beta4 + logpx_z + kl_structure + kl_semantic + kl_structure1 + kl_semantic1 + kl_structure2 + kl_semantic2 + kl_structure3 + kl_semantic3 + kl_structure4 + kl_semantic4)
 
-        print('*********')
-        print(l_elbo.item())
-        print('*********')
 
         return l_elbo
 
@@ -513,8 +510,6 @@ class Client(ClientModule):
                                               edge_logits)
 
                 loss.backward()
-
-                print(loss.item())
 
                 self.optimizer_vae.step()
 

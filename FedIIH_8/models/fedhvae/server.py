@@ -270,17 +270,6 @@ class Server(ServerModule):
         self.set_weights(self.model, self.aggregate(local_weights, ratio))
         self.logger.print(f'global model has been updated ({time.time() - st:.2f}s)')
 
-        print(sim_matrix_n)
-        print(sim_matrix_e)
-        print(sim_matrix_n1)
-        print(sim_matrix_e1)
-        print(sim_matrix_n2)
-        print(sim_matrix_e2)
-        print(sim_matrix_n3)
-        print(sim_matrix_e3)
-
-
-
         st = time.time()
         for i, c_id in enumerate(updated):
             aggr_local_model_weights = self.aggregate_sp(local_weights, sim_matrix_n[i, :], sim_matrix_e[i, :],
