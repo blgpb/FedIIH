@@ -226,7 +226,8 @@ class Client(ClientModule):
         self.curr_rnd = curr_rnd
 
         if self.curr_rnd != 0 and self.curr_rnd != self.args.trained_rounds:
-            self.update(self.sd[f'personalized_{self.client_id}'])
+            self.update(self.sd[f'personalized_{self.client_id}' \
+                if (f'personalized_{self.client_id}' in self.sd) else 'global'])
         else:
             self.update(self.sd[f'global'])
 
