@@ -178,3 +178,5 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Questions --mod
 $ cd FedIIH_2
 $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Questions --mode overlapping --frac 1.0 --n-rnds 100 --n-eps 1 --n-clients 10 --seed 42
 ```
+## Reference
+The code structure is based on the code in FED-PUB (https://github.com/JinheonBaek/FED-PUB).
