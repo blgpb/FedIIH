@@ -1,14 +1,22 @@
+![FedIIH Logo](FedIIH_logo.png)
+
 # Modeling Inter-Intra Heterogeneity for Graph Federated Learning
 
-Official Code Repository for our paper - Modeling Inter-Intra Heterogeneity for Graph Federated Learning
+Official Code Repository for our paper (AAAI 2025) :
 
-**This is the first version of our codes, which seems to be not perfect. If our paper is accepted, we will publish the more elegant and concise codes on GitHub. We also promise to implement our method on the commercial federated learning frameworks, such as FATE, PaddleFL, and FederatedScope.**
+Modeling Inter-Intra Heterogeneity for Graph Federated Learning
+
+
+## Highlights
+- User-Friendly: Simple and intuitive to use.
+- SOTA Performance: Outperforms the second-best by 5.79% on all heterophilic datasets.
+- Rich Datasets: Covers 11 GFL datasets (6 homophilic, 5 heterophilic).
 
 ## Requirement
 - Python 3.8.8
 - PyTorch 1.12.0+cu113
 - PyTorch Geometric 2.3.0
-- METIS (only for subgraph generation) https://anonymous.4open.science/r/metis_python
+- METIS (only for subgraph generation) https://github.com/james77777778/metis_python
 
 ## Subgraph generation
 Download from the Google Drive (https://drive.google.com/file/d/1PyqvR6yL43Om42fdsbKHj5WCgREvi3St/view?usp=sharing) and then unzip it.
@@ -17,7 +25,7 @@ Place the `datasets` folder in the same path as `README.md`
 
 or
 
-follow command lines automatically to generate the subgraphs.
+Follow command lines automatically to generate the subgraphs.
 ```sh
 $ cd FedIIH_2/data/generators
 $ python disjoint.py
@@ -178,5 +186,19 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Questions --mod
 $ cd FedIIH_2
 $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Questions --mode overlapping --frac 1.0 --n-rnds 100 --n-eps 1 --n-clients 10 --seed 42
 ```
+
+## Citation
+If you found our code or our paper useful in your work, please cite our work. Thank you very much!
+
+```
+@inproceedings{yu2025modeling,
+  title={Modeling Inter-Intra Heterogeneity for Graph Federated Learning},
+  author={Yu, Wentao and Chen, Shuo and Tong, Yongxin and Gu, Tianlong and Gong, Chen},
+  booktitle={AAAI Conference on Artificial Intelligence},
+  pages={1--8},
+  year={2025}
+}
+```
+
 ## Reference
-The code structure is based on the code in FED-PUB (https://github.com/JinheonBaek/FED-PUB).
+The code structure is inspired by the code in FED-PUB (https://github.com/JinheonBaek/FED-PUB).
