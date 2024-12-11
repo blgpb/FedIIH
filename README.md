@@ -195,7 +195,7 @@ If you found our code or our paper useful in your work, please cite our work. Th
   title={Modeling Inter-Intra Heterogeneity for Graph Federated Learning},
   author={Yu, Wentao and Chen, Shuo and Tong, Yongxin and Gu, Tianlong and Gong, Chen},
   booktitle={AAAI Conference on Artificial Intelligence},
-  pages={1--8},
+  pages={1--7},
   year={2025}
 }
 ```
