@@ -111,12 +111,12 @@ $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset Photo --mode ov
 ## ogbn-arxiv
 ### non-overlapping
 ```Python
-$ cd FedIIH_6
+$ cd FedIIH_2
 $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset ogbn-arxiv --mode disjoint --frac 1.0 --n-rnds 200 --n-eps 2 --n-clients 10 --seed 42
 ```
 ### overlapping
 ```Python
-$ cd FedIIH_6
+$ cd FedIIH_2
 $ python main.py --gpu 0 --n-workers 1 --model fedhvae --dataset ogbn-arxiv --mode overlapping --frac 1.0 --n-rnds 200 --n-eps 2 --n-clients 10 --seed 42
 ```
 
